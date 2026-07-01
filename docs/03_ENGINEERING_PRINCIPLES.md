@@ -117,3 +117,27 @@ Engineering principles last.
 Optimize for understanding, not memorization.
 
 If the reasoning is understood, implementation becomes much easier.
+
+---
+
+## Principle 12
+
+Document processing happens before user interaction.
+
+Documents should be parsed, cleaned, chunked and embedded before users start querying the system.
+
+---
+
+## Principle 13
+
+A document is not searchable until it has been successfully indexed.
+
+Uploading a document does not immediately make it retrievable.
+
+---
+
+## Principle 14
+
+Every optimization introduces a trade-off.
+
+Preprocessing improves query speed but introduces challenges such as storage, index freshness and re-indexing.

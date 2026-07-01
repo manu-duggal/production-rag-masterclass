@@ -76,15 +76,20 @@ Status
 
 # Current Checkpoint
 
-## 🟡 Knowledge Ingestion Pipeline
+🟡 Phase 2 — Knowledge Ingestion
 
-Learning
+Current Understanding
 
-- Production ingestion pipeline
-- Document lifecycle
-- Connectors
-- Parsing
-- Cleaning
+✓ Offline Pipeline
+✓ Online Pipeline
+✓ Document Lifecycle
+✓ When each stage executes
+
+Next Focus
+
+- Production Ingestion Pipeline
+- Document Loaders
+- Parsers
 - Metadata
 
 Status
