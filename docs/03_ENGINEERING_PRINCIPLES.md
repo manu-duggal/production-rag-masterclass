@@ -141,3 +141,46 @@ Uploading a document does not immediately make it retrievable.
 Every optimization introduces a trade-off.
 
 Preprocessing improves query speed but introduces challenges such as storage, index freshness and re-indexing.
+
+---
+
+## Principle 15
+
+Separate data acquisition from data processing.
+
+The loader acquires data from the source.
+The parser converts it into a machine-readable representation.
+
+---
+
+## Principle 16
+
+Parsing quality directly affects retrieval quality.
+
+Poor parsing leads to poor chunking, poor embeddings and poor retrieval.
+
+---
+
+## Principle 17
+
+Not every PDF requires OCR.
+
+Run OCR only when the document does not contain extractable text.
+
+---
+
+## Principle 18
+
+Never destroy information during ingestion unless you intentionally choose to.
+
+Preserve the raw data whenever possible.
+
+---
+
+## Principle 19
+
+Avoid unnecessary format conversions.
+
+Whenever possible, parse the original document format instead of converting it to another format first.
+
+---
