@@ -8,19 +8,19 @@
 
 # Current Version
 
-v0.0
+v0.2
 
 ---
 
 # Current Phase
 
-Phase 2 — Knowledge Ingestion
+Phase 4 — Embeddings
 
 ---
 
 # Current Milestone
 
-Understanding the Production Knowledge Ingestion Pipeline
+Embedding Engineering
 
 ---
 
@@ -28,7 +28,9 @@ Understanding the Production Knowledge Ingestion Pipeline
 
 🟡 In Progress
 
-The repository currently focuses on building the knowledge foundation required before implementing the first production ingestion pipeline.
+The engineering design for the knowledge ingestion pipeline and chunking strategies has been completed.
+
+The project is now moving into embedding engineering before implementation begins.
 
 ---
 
@@ -72,57 +74,79 @@ The repository currently focuses on building the knowledge foundation required b
 
 ---
 
-## RAG Lifecycle
+## Production Knowledge Ingestion
+
+Completed topics:
 
 - Offline Pipeline
 - Online Pipeline
 - Document Lifecycle
 - Query Lifecycle
-- Why preprocessing exists
-- Trade-offs of preprocessing
-
----
-
-# Currently Learning
-
-Production Knowledge Ingestion
-
-Topics remaining:
-
+- Connectors
 - Document Loaders
 - Parsers
 - OCR
 - Cleaning
 - Metadata
+- Metadata Filtering
 - Deduplication
 - Versioning
+- Access Control
 - Incremental Indexing
+- Index Freshness
+
+---
+
+## Chunking Engineering
+
+Completed topics:
+
+- Why Chunking Exists
+- Fixed-Size Chunking
+- Recursive Chunking
+- Semantic Chunking
+- Sliding Window Chunking
+- Parent–Child Chunking
+- Chunk Overlap
+- Chunk Size Selection
+- Chunking Trade-offs
+- Chunking Architecture
+- Production Chunking Design
+- Chunking Debugging Methodology
+
+---
+
+# Currently Learning
+
+## Embedding Engineering
+
+Upcoming topics:
+
+- Why Embeddings Exist
+- Semantic Representation
+- Vector Space
+- Similarity Metrics
+- Embedding Models
+- Embedding Dimensions
+- Choosing Embedding Models
+- Multilingual Embeddings
+- Domain-Specific Embeddings
+- Embedding Evaluation
+- Production Embedding Pipelines
 
 ---
 
 # Upcoming Milestones
 
-## v0.1
-
-Production Knowledge Ingestion
-
----
-
-## v0.2
-
-Chunking
-
----
-
 ## v0.3
 
-Embeddings
+Embedding Engineering
 
 ---
 
 ## v0.4
 
-Vector Database
+Vector Databases
 
 ---
 
@@ -167,10 +191,11 @@ Production-Ready RAG System
 By Version 1.0 the repository should contain:
 
 - Production-ready RAG implementation
-- Clean architecture
+- Modular architecture
 - Professional Git history
 - Engineering documentation
-- Decision log
+- Engineering principles handbook
+- Architectural decision log
 - Interview-ready explanations
 - Production-quality README
 
@@ -181,9 +206,11 @@ By Version 1.0 the repository should contain:
 The project is complete when it can:
 
 - Ingest documents from multiple sources.
-- Process and clean documents automatically.
+- Parse and clean heterogeneous documents.
+- Build and maintain production-ready indexes.
 - Generate and manage embeddings efficiently.
 - Retrieve highly relevant context.
-- Produce grounded responses.
-- Be evaluated using production metrics.
+- Support metadata filtering and access control.
+- Produce grounded, citation-aware responses.
+- Be evaluated using production retrieval and generation metrics.
 - Be explained confidently in a system design interview.

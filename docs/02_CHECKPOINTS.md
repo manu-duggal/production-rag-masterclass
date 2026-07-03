@@ -4,31 +4,29 @@
 >
 > It is intentionally concise.
 >
-> The detailed explanations live in the conversations and the codebase.
+> Detailed explanations live in the conversations and the codebase.
 >
-> This file only records what has been mastered and where the project currently stands.
+> This file records what has been mastered and the current learning milestone.
 
 ---
 
 # Current Phase
 
-🟡 Phase 2 — Knowledge Ingestion
+🟡 Phase 4 — Embeddings
 
 ---
 
 # Completed Checkpoints
 
-## ✅ Checkpoint 1
+## ✅ Checkpoint 1 — Why RAG Exists
 
-### Why RAG Exists
-
-Can explain:
+Can confidently explain:
 
 - Why LLMs hallucinate
 - Static vs Dynamic Knowledge
 - Fine-tuning vs Retrieval
 - Why RAG exists
-- Why RAG is needed in production
+- Why production systems use retrieval
 
 Status
 
@@ -36,18 +34,16 @@ Status
 
 ---
 
-## ✅ Checkpoint 2
+## ✅ Checkpoint 2 — AI System Architecture
 
-### AI System Architecture
-
-Can explain:
+Can confidently explain:
 
 - LLM vs RAG
 - APIs
 - SQL
 - Tools
 - Source of Truth
-- How modern AI applications are built
+- Modern AI application architecture
 
 Status
 
@@ -55,11 +51,9 @@ Status
 
 ---
 
-## ✅ Checkpoint 3
+## ✅ Checkpoint 3 — Knowledge Engineering
 
-### Knowledge Engineering
-
-Can explain:
+Can confidently explain:
 
 - Structured Data
 - Semi-Structured Data
@@ -74,23 +68,101 @@ Status
 
 ---
 
-# Current Checkpoint
+## ✅ Checkpoint 4 — Production Knowledge Ingestion
 
-🟡 Phase 2 — Knowledge Ingestion
+Can confidently explain:
 
-Current Understanding
+### RAG Lifecycle
 
-✓ Offline Pipeline
-✓ Online Pipeline
-✓ Document Lifecycle
-✓ When each stage executes
+- Offline Pipeline
+- Online Pipeline
+- Document Lifecycle
+- Query Lifecycle
 
-Next Focus
+### Data Ingestion
 
-- Production Ingestion Pipeline
+- Connectors
 - Document Loaders
 - Parsers
+- OCR
+- Cleaning
 - Metadata
+- Duplicate Detection
+- Incremental Indexing
+
+### Engineering Concepts
+
+- Why metadata should live outside chunks
+- Metadata filtering
+- Versioning
+- Access control
+- Index freshness
+- Why preprocessing exists
+- Trade-offs of preprocessing
+
+Status
+
+✔ Confident
+
+---
+
+## ✅ Checkpoint 5 — Chunking
+
+Can confidently explain:
+
+### Why Chunking Exists
+
+- Why chunking is required in RAG
+- Relationship between chunk quality and retrieval quality
+- Retrieval precision vs generation context
+
+### Chunking Strategies
+
+- Fixed-Size Chunking
+- Recursive Chunking
+- Semantic Chunking
+- Sliding Window Chunking
+- Parent–Child Chunking
+
+### Chunk Design
+
+- Choosing chunk size
+- Chunk overlap
+- Semantic boundaries
+- Natural document structure
+- Document-specific chunking strategies
+
+### Production Engineering
+
+- Trade-offs between different chunking strategies
+- When to use each chunking strategy
+- Storage and indexing implications
+- Parent–Child architecture
+- Chunking for different document types
+- Debugging chunking-related retrieval issues
+
+Status
+
+✔ Confident
+
+---
+
+# Current Focus
+
+🟡 Embeddings
+
+Upcoming Topics
+
+- Why Embeddings Exist
+- Semantic Representation
+- Vector Space
+- Similarity Metrics
+- Embedding Models
+- Choosing Embedding Models
+- Multilingual Embeddings
+- Domain-Specific Embeddings
+- Embedding Evaluation
+- Production Embedding Pipelines
 
 Status
 
@@ -98,10 +170,8 @@ In Progress
 
 ---
 
-# Upcoming
+# Upcoming Modules
 
-- Chunking
-- Embeddings
 - Vector Databases
 - Retrieval
 - Hybrid Search
@@ -109,4 +179,4 @@ In Progress
 - Generation
 - Evaluation
 - Production Engineering
-- Capstone
+- Capstone Project
