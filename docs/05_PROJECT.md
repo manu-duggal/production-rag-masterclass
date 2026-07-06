@@ -8,19 +8,19 @@
 
 # Current Version
 
-v0.2
+v0.5
 
 ---
 
 # Current Phase
 
-Phase 4 — Embeddings
+Phase 8 — Generation & Context Engineering
 
 ---
 
 # Current Milestone
 
-Embedding Engineering
+Generation Pipeline Design
 
 ---
 
@@ -28,9 +28,11 @@ Embedding Engineering
 
 🟡 In Progress
 
-The engineering design for the knowledge ingestion pipeline and chunking strategies has been completed.
+The complete retrieval pipeline has now been designed conceptually.
 
-The project is now moving into embedding engineering before implementation begins.
+The project has covered knowledge ingestion, chunking, embeddings, vector search, reranking and retrieval evaluation.
+
+The next milestone is building the generation pipeline and implementing the complete production RAG workflow.
 
 ---
 
@@ -46,6 +48,8 @@ The project is now moving into embedding engineering before implementation begin
 
 ## Engineering Foundations
 
+Completed topics:
+
 - Why RAG Exists
 - Fine-tuning vs Retrieval
 - Static vs Dynamic Knowledge
@@ -54,6 +58,8 @@ The project is now moving into embedding engineering before implementation begin
 ---
 
 ## AI Architecture
+
+Completed topics:
 
 - LLM vs RAG
 - APIs vs Databases
@@ -64,6 +70,8 @@ The project is now moving into embedding engineering before implementation begin
 ---
 
 ## Knowledge Engineering
+
+Completed topics:
 
 - Structured Data
 - Semi-Structured Data
@@ -116,67 +124,122 @@ Completed topics:
 
 ---
 
+## Embedding Engineering
+
+Completed topics:
+
+- Why Embeddings Exist
+- Distributional Hypothesis
+- Semantic Representation
+- Dense Vector Embeddings
+- Vector Space
+- Embedding Dimensions
+- Cosine Similarity
+- Euclidean Distance
+- Embedding Models
+- Query vs Document Embeddings
+- Embedding Pipelines
+- Choosing Embedding Models
+- Domain-Specific Embeddings
+- Embedding Evaluation
+
+---
+
+## Vector Databases & Retrieval
+
+Completed topics:
+
+- Why Vector Databases Exist
+- Approximate Nearest Neighbor (ANN)
+- Exact Nearest Neighbor (ENN)
+- Vector Indexing
+- Similarity Search
+- Cosine Similarity
+- Similarity Metrics
+- Top-K Retrieval
+- Search Depth
+- Retrieval Trade-offs
+- Context Dilution
+
+---
+
+## Reranking
+
+Completed topics:
+
+- Why Reranking Exists
+- Bi-Encoder vs Cross-Encoder
+- Candidate Retrieval
+- Cross-Encoder Scoring
+- Dynamic Routing
+- Query Complexity
+- Open-Source vs API Rerankers
+- Production Reranking Decisions
+- Cost vs Latency Trade-offs
+
+---
+
+## Retrieval Evaluation
+
+Completed topics:
+
+- Ground Truth Datasets
+- Precision@K
+- Recall@K
+- Mean Reciprocal Rank (MRR)
+- NDCG
+- Offline Evaluation
+- Online Evaluation
+- A/B Testing
+- Evaluation Pipelines
+- User Feedback Loops
+- Business Metrics
+- Production Evaluation Strategy
+
+---
+
 # Currently Learning
 
-## Embedding Engineering
+## Generation & Context Engineering
 
 Upcoming topics:
 
-- Why Embeddings Exist
-- Semantic Representation
-- Vector Space
-- Similarity Metrics
-- Embedding Models
-- Embedding Dimensions
-- Choosing Embedding Models
-- Multilingual Embeddings
-- Domain-Specific Embeddings
-- Embedding Evaluation
-- Production Embedding Pipelines
+- Prompt Construction
+- Context Engineering
+- Context Window Management
+- Context Compression
+- Citation & Grounding
+- Hallucination Reduction
+- Response Synthesis
+- Multi-Document Generation
+- Prompt Pipelines
+- Production Generation Architecture
 
 ---
 
 # Upcoming Milestones
 
-## v0.3
-
-Embedding Engineering
-
----
-
-## v0.4
-
-Vector Databases
-
----
-
-## v0.5
-
-Retrieval
-
----
-
 ## v0.6
 
-Hybrid Search
+Generation & Context Engineering
 
 ---
 
 ## v0.7
 
-Reranking
+Hybrid Search
 
 ---
 
 ## v0.8
 
-Generation
+Query Rewriting & Caching
 
 ---
 
 ## v0.9
 
-Evaluation
+Production Evaluation & Observability
 
 ---
 
@@ -196,6 +259,7 @@ By Version 1.0 the repository should contain:
 - Engineering documentation
 - Engineering principles handbook
 - Architectural decision log
+- Production evaluation framework
 - Interview-ready explanations
 - Production-quality README
 
@@ -211,6 +275,8 @@ The project is complete when it can:
 - Generate and manage embeddings efficiently.
 - Retrieve highly relevant context.
 - Support metadata filtering and access control.
+- Rerank retrieved candidates effectively.
 - Produce grounded, citation-aware responses.
 - Be evaluated using production retrieval and generation metrics.
+- Support continuous improvement through production feedback.
 - Be explained confidently in a system design interview.

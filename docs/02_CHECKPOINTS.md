@@ -12,7 +12,7 @@
 
 # Current Phase
 
-🟡 Phase 4 — Embeddings
+🟡 Phase 8 — Generation & Context Engineering
 
 ---
 
@@ -134,12 +134,158 @@ Can confidently explain:
 
 ### Production Engineering
 
-- Trade-offs between different chunking strategies
-- When to use each chunking strategy
-- Storage and indexing implications
+- Trade-offs between chunking strategies
 - Parent–Child architecture
-- Chunking for different document types
+- Storage implications
 - Debugging chunking-related retrieval issues
+- Choosing chunking strategies based on business requirements
+
+Status
+
+✔ Confident
+
+---
+
+## ✅ Checkpoint 6 — Embeddings
+
+Can confidently explain:
+
+### Embedding Fundamentals
+
+- Distributional Hypothesis
+- Semantic Representation
+- Vector Space
+- Dense Vector Embeddings
+- Why embeddings exist
+
+### Embedding Engineering
+
+- Cosine Similarity
+- Euclidean Distance
+- Embedding dimensions
+- Embedding generation
+- Query embeddings vs document embeddings
+- Compatible embedding models
+
+### Production Concepts
+
+- Choosing embedding models
+- Domain-specific embeddings
+- Embedding quality
+- Embedding pipelines
+- Relationship between chunk quality and embedding quality
+
+### Practical
+
+- Generated embeddings using Sentence Transformers
+- Compared embeddings using cosine similarity
+- Interpreted embedding tensors
+- Built semantic similarity experiments
+
+Status
+
+✔ Confident
+
+---
+
+## ✅ Checkpoint 7 — Vector Databases & Retrieval
+
+Can confidently explain:
+
+### Vector Databases
+
+- Why vector databases exist
+- Vector indexing
+- Approximate Nearest Neighbor (ANN)
+- Exact Nearest Neighbor (ENN)
+- Similarity search
+
+### Retrieval
+
+- Cosine Similarity
+- Top-K Retrieval
+- Search depth
+- Context dilution
+- Recall vs Precision trade-offs
+
+### Production Concepts
+
+- ANN vs ENN
+- Choosing similarity metrics
+- Choosing Top-K
+- Latency vs retrieval quality
+- Scaling semantic search
+
+Status
+
+✔ Confident
+
+---
+
+## ✅ Checkpoint 8 — Reranking
+
+Can confidently explain:
+
+### Reranking Fundamentals
+
+- Why rerankers exist
+- Bi-Encoder vs Cross-Encoder
+- Candidate retrieval
+- Query-document interaction
+
+### Production Concepts
+
+- Dynamic routing
+- When reranking is useful
+- When reranking is unnecessary
+- Open-source vs API rerankers
+- Cost vs latency vs quality trade-offs
+
+### Engineering Decisions
+
+- Choosing reranker models
+- Retrieval confidence
+- Query routing
+- Business-driven reranking decisions
+
+Status
+
+✔ Confident
+
+---
+
+## ✅ Checkpoint 9 — Retrieval Evaluation
+
+Can confidently explain:
+
+### Offline Evaluation
+
+- Ground-truth datasets
+- Evaluation methodology
+- Controlled experiments
+
+### Retrieval Metrics
+
+- Precision@K
+- Recall@K
+- Mean Reciprocal Rank (MRR)
+- NDCG
+
+### Production Evaluation
+
+- Offline vs Online Evaluation
+- A/B Testing
+- User feedback loops
+- Evaluation datasets
+- Business metrics
+- Metric trade-offs
+
+### Engineering Decisions
+
+- Choosing metrics based on product requirements
+- Diagnosing retrieval failures
+- Measuring retrieval improvements
+- Continuous evaluation in production
 
 Status
 
@@ -149,20 +295,20 @@ Status
 
 # Current Focus
 
-🟡 Embeddings
+🟡 Generation & Context Engineering
 
 Upcoming Topics
 
-- Why Embeddings Exist
-- Semantic Representation
-- Vector Space
-- Similarity Metrics
-- Embedding Models
-- Choosing Embedding Models
-- Multilingual Embeddings
-- Domain-Specific Embeddings
-- Embedding Evaluation
-- Production Embedding Pipelines
+- Prompt Construction
+- Context Engineering
+- Context Window Management
+- Citation & Grounding
+- Hallucination Reduction
+- Context Compression
+- Prompt Templates
+- Multi-document Generation
+- Response Synthesis
+- Production Prompt Pipelines
 
 Status
 
@@ -172,11 +318,10 @@ In Progress
 
 # Upcoming Modules
 
-- Vector Databases
-- Retrieval
 - Hybrid Search
-- Reranking
-- Generation
-- Evaluation
+- Query Rewriting
+- Caching
+- Production Evaluation
+- Observability
 - Production Engineering
 - Capstone Project

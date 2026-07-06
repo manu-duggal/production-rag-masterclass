@@ -415,3 +415,283 @@ Different document types require different chunking strategies.
 Never optimize before identifying the bottleneck.
 
 Inspect retrieved chunks, boundaries, overlap and retrieval behavior before modifying the chunking strategy.
+
+---
+
+# Embedding Engineering
+
+## Principle 49
+
+Embeddings represent semantic meaning, not keywords.
+
+Documents with similar meanings should be located close together in the vector space even if they share few or no common words.
+
+---
+
+## Principle 50
+
+Embedding quality depends on chunk quality.
+
+A coherent chunk produces a more meaningful embedding than a chunk containing unrelated topics.
+
+---
+
+## Principle 51
+
+Embedding models learn meaning from context rather than predefined rules.
+
+Semantic relationships emerge from observing how words and phrases appear together across large corpora.
+
+---
+
+## Principle 52
+
+Similarity should be measured using the metric for which the embedding model was designed.
+
+Using an incompatible similarity metric can significantly reduce retrieval quality.
+
+---
+
+## Principle 53
+
+Vector dimensionality alone does not determine embedding quality.
+
+Higher-dimensional embeddings increase representation capacity but do not automatically produce better semantic understanding.
+
+---
+
+## Principle 54
+
+Query and document embeddings must be generated using compatible embedding models.
+
+Embeddings from different models should not be compared directly.
+
+---
+
+## Principle 55
+
+Embedding generation belongs to the ingestion pipeline whenever possible.
+
+Generate document embeddings once and reuse them during retrieval to minimize query latency.
+
+---
+
+## Principle 56
+
+Embedding models compress semantic information rather than storing complete document meaning.
+
+An embedding captures the dominant semantics of its input but cannot preserve every detail.
+
+---
+
+# Vector Search
+
+## Principle 57
+
+Vector databases optimize retrieval speed through indexing rather than exhaustive comparison.
+
+Efficient indexing enables semantic search to scale to millions of embeddings.
+
+---
+
+## Principle 58
+
+Approximate Nearest Neighbor search trades a small amount of retrieval accuracy for significant improvements in search latency.
+
+The trade-off should be chosen according to business requirements.
+
+---
+
+## Principle 59
+
+Exact Nearest Neighbor search is appropriate when retrieval accuracy is more important than latency.
+
+Examples include medical, legal and other high-risk applications.
+
+---
+
+## Principle 60
+
+The choice of Top-K is a balance between recall, precision, latency and context size.
+
+Retrieving more documents is not always better.
+
+---
+
+## Principle 61
+
+Higher Top-K increases the candidate pool but also increases context dilution, token usage and computational cost.
+
+---
+
+## Principle 62
+
+Cosine similarity measures semantic alignment rather than vector magnitude.
+
+For most modern embedding models, direction is more informative than length.
+
+---
+
+## Principle 63
+
+Index configuration should be evaluated together with embedding quality.
+
+Poor retrieval is not always caused by the embedding model.
+
+---
+
+## Principle 64
+
+Search quality should be evaluated before increasing infrastructure complexity.
+
+Measure retrieval performance before introducing more sophisticated indexing or reranking techniques.
+
+---
+
+# Reranking
+
+## Principle 65
+
+Bi-encoders optimize retrieval efficiency by encoding queries and documents independently.
+
+Their primary strength is scalability.
+
+---
+
+## Principle 66
+
+Cross-encoders optimize retrieval quality by evaluating the query and document together.
+
+Their primary strength is relevance estimation.
+
+---
+
+## Principle 67
+
+Cross-encoder relevance scores are query-dependent and therefore cannot be precomputed.
+
+---
+
+## Principle 68
+
+Rerankers improve the ordering of retrieved candidates.
+
+They cannot recover documents that were never retrieved.
+
+---
+
+## Principle 69
+
+The effectiveness of a reranker depends on the quality of the candidate set it receives.
+
+Poor retrieval cannot be fully corrected by reranking.
+
+---
+
+## Principle 70
+
+Reranking should be introduced only when measurable improvements justify the additional latency and operational cost.
+
+---
+
+## Principle 71
+
+Production systems should adapt retrieval pipelines to query complexity whenever practical.
+
+Simple queries do not always require reranking.
+
+---
+
+## Principle 72
+
+Retrieval confidence can guide dynamic routing decisions.
+
+When retrieval confidence is already high, additional reranking may provide little benefit.
+
+---
+
+## Principle 73
+
+Infrastructure decisions should be driven by production constraints rather than benchmark rankings alone.
+
+Latency, privacy, scalability and operational complexity are as important as model accuracy.
+
+---
+
+# Retrieval Evaluation
+
+## Principle 74
+
+Retrieval quality should be measured using objective evaluation metrics rather than subjective impressions.
+
+---
+
+## Principle 75
+
+Evaluation requires a trusted ground-truth dataset.
+
+Without reliable relevance labels, retrieval metrics have limited meaning.
+
+---
+
+## Principle 76
+
+Compare retrieval systems using identical evaluation datasets and identical evaluation conditions.
+
+---
+
+## Principle 77
+
+Each retrieval metric measures a different aspect of system quality.
+
+Precision, Recall, MRR and NDCG should be interpreted together rather than in isolation.
+
+---
+
+## Principle 78
+
+Offline evaluation measures retrieval quality.
+
+Online evaluation measures user impact.
+
+Both are necessary for production systems.
+
+---
+
+## Principle 79
+
+Production deployments should follow a staged evaluation process.
+
+Offline validation should precede controlled rollout and online monitoring.
+
+---
+
+## Principle 80
+
+User interactions are one of the most valuable sources of future evaluation data.
+
+Production feedback should continuously improve the evaluation dataset.
+
+---
+
+## Principle 81
+
+Improving one retrieval metric may reduce another.
+
+Optimization should always be guided by business objectives rather than individual metric values.
+
+---
+
+## Principle 82
+
+Evaluate one pipeline component at a time whenever possible.
+
+Changing multiple components simultaneously makes root-cause analysis significantly more difficult.
+
+---
+
+## Principle 83
+
+Business success is the final evaluation metric.
+
+Strong retrieval metrics are valuable only when they improve the user experience and business outcomes.
