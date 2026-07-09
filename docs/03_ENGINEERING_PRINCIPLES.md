@@ -695,3 +695,269 @@ Changing multiple components simultaneously makes root-cause analysis significan
 Business success is the final evaluation metric.
 
 Strong retrieval metrics are valuable only when they improve the user experience and business outcomes.
+
+---
+
+# Generation Engineering
+
+## Principle 84
+
+Generation quality depends on retrieval quality.
+
+The LLM cannot reliably compensate for missing or irrelevant context.
+
+---
+
+## Principle 85
+
+The quality of generated answers depends more on the quality of the provided context than the size of the context.
+
+More context is not always better.
+
+---
+
+## Principle 86
+
+Conversation memory preserves dialogue.
+
+Retrieved context provides external knowledge.
+
+Both solve different engineering problems.
+
+---
+
+## Principle 87
+
+Retrieve only when additional external knowledge is required.
+
+Reuse conversation memory whenever it already contains sufficient information.
+
+---
+
+## Principle 88
+
+Conversation history should be managed with the same discipline as retrieved context.
+
+Long conversations can also cause context dilution.
+
+---
+
+## Principle 89
+
+Context ordering influences reasoning quality.
+
+Present related information in a logical order whenever possible.
+
+---
+
+## Principle 90
+
+Context compression should remove irrelevant information without changing the meaning of the original content.
+
+---
+
+## Principle 91
+
+Grounding is a prompt design problem as much as a retrieval problem.
+
+The model should clearly understand that retrieved knowledge is the source of truth.
+
+---
+
+## Principle 92
+
+Prompt templates should be centralized rather than duplicated across the application.
+
+Updating one template should improve the behavior of the entire system.
+
+---
+
+## Principle 93
+
+Conversation state and retrieved knowledge should complement each other rather than replace one another.
+
+---
+
+## Principle 94
+
+Query rewriting should preserve the user's intent while making the retrieval query more explicit.
+
+---
+
+## Principle 95
+
+Query rewriting should clarify ambiguity rather than introduce new assumptions.
+
+---
+
+## Principle 96
+
+Not every user query benefits from query rewriting.
+
+Rewrite only when it improves retrieval quality.
+
+---
+
+# Hybrid Search
+
+## Principle 97
+
+Semantic search and lexical search solve different retrieval problems.
+
+Neither is universally better.
+
+---
+
+## Principle 98
+
+Exact identifiers such as error codes, IDs and function names are often better handled through lexical matching.
+
+---
+
+## Principle 99
+
+Hybrid search combines complementary retrieval signals instead of replacing one retrieval method with another.
+
+---
+
+## Principle 100
+
+Retrieval strategies should reflect the distribution of production queries rather than theoretical capabilities.
+
+---
+
+## Principle 101
+
+Retrieval scores produced by different algorithms are not directly comparable without an appropriate fusion strategy.
+
+---
+
+## Principle 102
+
+Score fusion should produce a unified candidate set before reranking performs fine-grained relevance optimization.
+
+---
+
+## Principle 103
+
+Fusion weights should be tuned using production evaluation rather than arbitrary defaults.
+
+---
+
+# Production Engineering
+
+## Principle 104
+
+Cache deterministic computations whenever the cost of recomputation exceeds the cost of storing the result.
+
+---
+
+## Principle 105
+
+Frequently repeated and stable queries provide the greatest benefit from caching.
+
+---
+
+## Principle 106
+
+Caching should occur as early in the pipeline as possible to avoid unnecessary downstream computation.
+
+---
+
+## Principle 107
+
+Knowledge updates should invalidate dependent caches as soon as possible.
+
+Event-driven invalidation is generally preferable when knowledge changes can be detected.
+
+---
+
+## Principle 108
+
+Logs record what happened.
+
+Observability explains why it happened.
+
+---
+
+## Principle 109
+
+Metrics reveal system-wide trends.
+
+Logs explain individual requests.
+
+Both are required for effective production debugging.
+
+---
+
+## Principle 110
+
+Every major stage of the pipeline should expose sufficient metrics and logs for debugging and performance analysis.
+
+---
+
+## Principle 111
+
+Monitoring should detect production problems before users report them.
+
+---
+
+## Principle 112
+
+Production monitoring should include technical metrics, retrieval metrics and user-experience metrics.
+
+---
+
+## Principle 113
+
+Alert thresholds should represent meaningful deviations rather than normal operational variation.
+
+---
+
+## Principle 114
+
+Knowledge freshness is a production metric.
+
+A system can be technically healthy while serving outdated information.
+
+---
+
+## Principle 115
+
+Deployment metadata is valuable during debugging.
+
+Many production regressions originate from configuration or deployment changes rather than algorithmic failures.
+
+---
+
+## Principle 116
+
+Every production optimization should justify its operational cost through measurable improvements in system quality or user experience.
+
+---
+
+## Principle 117
+
+Engineering decisions should be guided by measurable evidence rather than intuition.
+
+Use evaluation metrics, logs, monitoring and user feedback to identify the real bottleneck before optimizing.
+
+---
+
+## Principle 118
+
+Improve one pipeline component at a time whenever possible.
+
+Isolating changes makes root-cause analysis significantly easier.
+
+---
+
+## Principle 119
+
+Production improvements should be validated through controlled rollouts before full deployment.
+
+---
+
+## Principle 120
+
+The quality of a production RAG system is determined by the quality of the entire pipeline rather than the language model alone.

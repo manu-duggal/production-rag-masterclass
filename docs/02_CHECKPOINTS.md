@@ -12,7 +12,7 @@
 
 # Current Phase
 
-🟡 Phase 8 — Generation & Context Engineering
+🟡 Phase 10 — Production Implementation
 
 ---
 
@@ -198,6 +198,8 @@ Can confidently explain:
 - Vector indexing
 - Approximate Nearest Neighbor (ANN)
 - Exact Nearest Neighbor (ENN)
+- IVF
+- HNSW
 - Similarity search
 
 ### Retrieval
@@ -293,35 +295,128 @@ Status
 
 ---
 
-# Current Focus
+## ✅ Checkpoint 10 — Generation & Context Engineering
 
-🟡 Generation & Context Engineering
+Can confidently explain:
 
-Upcoming Topics
+### Prompt Engineering
 
-- Prompt Construction
-- Context Engineering
-- Context Window Management
-- Citation & Grounding
-- Hallucination Reduction
-- Context Compression
-- Prompt Templates
-- Multi-document Generation
-- Response Synthesis
-- Production Prompt Pipelines
+- Prompt construction
+- Prompt templates
+- Grounding
+- Citation-aware prompting
+
+### Context Engineering
+
+- Context ordering
+- Context compression
+- Context window management
+- Context quality vs quantity
+
+### Conversational RAG
+
+- Conversation memory
+- Retrieved context
+- Retrieval routing
+- Query rewriting
+
+### Production Concepts
+
+- Hallucination reduction
+- Response synthesis
+- Multi-document generation
+- Production prompt pipelines
 
 Status
 
-In Progress
+✔ Confident
+
+---
+
+## ✅ Checkpoint 11 — Hybrid Search
+
+Can confidently explain:
+
+### Retrieval Strategies
+
+- BM25
+- Semantic Search
+- Hybrid Search
+- Score Fusion
+- Reciprocal Rank Fusion (RRF)
+- Weighted Fusion
+
+### Engineering Decisions
+
+- Lexical vs semantic retrieval
+- Choosing retrieval strategies
+- Production query patterns
+- Fusion trade-offs
+
+Status
+
+✔ Confident
+
+---
+
+## ✅ Checkpoint 12 — Production Engineering
+
+Can confidently explain:
+
+### Production Infrastructure
+
+- Caching
+- Cache invalidation
+- Logging
+- Observability
+- Monitoring
+- Alerting
+
+### Production Operations
+
+- Production metrics
+- Deployment monitoring
+- Pipeline debugging
+- Knowledge freshness
+- Production architecture
+
+### Engineering Decisions
+
+- Data-driven optimization
+- Staged rollouts
+- Business-driven engineering
+- End-to-end production pipeline
+
+Status
+
+✔ Confident
+
+---
+
+# Current Focus
+
+🟡 Production Implementation
+
+Upcoming Topics
+
+- Repository Architecture
+- Folder Structure
+- Configuration Management
+- Environment Setup
+- Production Codebase
+- Modular Design
+- End-to-End Implementation
+
+Status
+
+Ready to Begin
 
 ---
 
 # Upcoming Modules
 
-- Hybrid Search
-- Query Rewriting
-- Caching
-- Production Evaluation
-- Observability
-- Production Engineering
+- Production Implementation
+- Testing
+- Production Optimization
+- Deployment
 - Capstone Project

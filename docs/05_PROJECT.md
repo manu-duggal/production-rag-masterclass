@@ -8,19 +8,19 @@
 
 # Current Version
 
-v0.5
+v0.6
 
 ---
 
 # Current Phase
 
-Phase 8 — Generation & Context Engineering
+Phase 10 — Production Implementation
 
 ---
 
 # Current Milestone
 
-Generation Pipeline Design
+Repository Architecture & Production Codebase Design
 
 ---
 
@@ -28,17 +28,17 @@ Generation Pipeline Design
 
 🟡 In Progress
 
-The complete retrieval pipeline has now been designed conceptually.
+The theoretical design of the complete production RAG system has been completed.
 
-The project has covered knowledge ingestion, chunking, embeddings, vector search, reranking and retrieval evaluation.
-
-The next milestone is building the generation pipeline and implementing the complete production RAG workflow.
+The next phase focuses on translating the architecture into a modular, production-quality implementation.
 
 ---
 
 # Completed
 
 ## Repository
+
+Completed topics:
 
 - Repository initialized
 - Documentation structure created
@@ -145,16 +145,17 @@ Completed topics:
 
 ---
 
-## Vector Databases & Retrieval
+## Vector Search & Retrieval
 
 Completed topics:
 
 - Why Vector Databases Exist
 - Approximate Nearest Neighbor (ANN)
 - Exact Nearest Neighbor (ENN)
+- IVF
+- HNSW
 - Vector Indexing
 - Similarity Search
-- Cosine Similarity
 - Similarity Metrics
 - Top-K Retrieval
 - Search Depth
@@ -198,48 +199,92 @@ Completed topics:
 
 ---
 
-# Currently Learning
-
 ## Generation & Context Engineering
 
-Upcoming topics:
+Completed topics:
 
 - Prompt Construction
+- Prompt Templates
 - Context Engineering
 - Context Window Management
+- Context Ordering
 - Context Compression
+- Conversation Memory
+- Retrieval Routing
+- Query Rewriting
 - Citation & Grounding
 - Hallucination Reduction
 - Response Synthesis
 - Multi-Document Generation
-- Prompt Pipelines
 - Production Generation Architecture
+
+---
+
+## Hybrid Search
+
+Completed topics:
+
+- BM25
+- Semantic Search
+- Hybrid Retrieval
+- Score Fusion
+- Reciprocal Rank Fusion (RRF)
+- Weighted Fusion
+- Retrieval Strategy Selection
+
+---
+
+## Production Engineering
+
+Completed topics:
+
+- Caching
+- Multi-Level Caching
+- Cache Invalidation
+- Logging
+- Observability
+- Monitoring
+- Alerting
+- Production Metrics
+- Production Architecture
+- End-to-End Pipeline Design
+
+---
+
+# Currently Learning
+
+## Production Implementation
+
+Upcoming topics:
+
+- Repository Architecture
+- Folder Structure
+- Environment Setup
+- Configuration Management
+- Dependency Management
+- Core Interfaces
+- Production Codebase
+- End-to-End Implementation
 
 ---
 
 # Upcoming Milestones
 
-## v0.6
-
-Generation & Context Engineering
-
----
-
 ## v0.7
 
-Hybrid Search
+Repository Architecture
 
 ---
 
 ## v0.8
 
-Query Rewriting & Caching
+Core Production Implementation
 
 ---
 
 ## v0.9
 
-Production Evaluation & Observability
+Production Optimization & Evaluation
 
 ---
 
@@ -276,7 +321,10 @@ The project is complete when it can:
 - Retrieve highly relevant context.
 - Support metadata filtering and access control.
 - Rerank retrieved candidates effectively.
+- Perform hybrid retrieval using lexical and semantic search.
+- Build grounded prompts dynamically.
 - Produce grounded, citation-aware responses.
 - Be evaluated using production retrieval and generation metrics.
+- Monitor production health through logging, observability and monitoring.
 - Support continuous improvement through production feedback.
 - Be explained confidently in a system design interview.
