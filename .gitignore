@@ -24,3 +24,13 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Development smoke tests
+test_loader.py
+test_parser.py
+test_metadata.py
+test_chunker.py
+test_embedder.py
+test_retriever.py
+test_prompt_builder.py
+test_rag.py
