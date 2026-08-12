@@ -35,3 +35,5 @@ test_retriever.py
 test_prompt_builder.py
 test_rag.py
 test_ingestion_pipeline.py
+test_evaluation_pipeline.py
+test_query_pipeline.py
