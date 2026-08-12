@@ -4,11 +4,7 @@ from src.embeddings.embedder import generate_query_embedding
 from src.vectorstore.faiss_store import FAISSVectorStore
 
 
-def retrieve(
-    query: str,
-    vector_store: FAISSVectorStore,
-    k: int = 5,
-) -> list[Document]:
+def retrieve(query: str, vector_store: FAISSVectorStore, k: int = 3) -> list[Document]:
     """
     Retrieve the top-k most relevant document chunks
     for a user query.
