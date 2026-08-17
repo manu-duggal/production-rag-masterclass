@@ -2,6 +2,8 @@ import time
 
 from src.generation.llm import generate_response
 from src.generation.prompt_builder import build_prompt
+from src.retrieval.bm25 import BM25Retriever
+from src.retrieval.hybrid import retrieve_hybrid
 from src.retrieval.retriever import retrieve
 from src.vectorstore.faiss_store import FAISSVectorStore
 
@@ -9,6 +11,7 @@ from src.vectorstore.faiss_store import FAISSVectorStore
 def answer_question(
     query: str,
     vector_store: FAISSVectorStore,
+    bm25: BM25Retriever | None = None,
 ) -> dict:
     """
     Answer a user question using the knowledge base.
@@ -17,15 +20,25 @@ def answer_question(
     total_start = time.perf_counter()
 
     # ----------------------------------------
-    # Retrieve relevant documents
+    # Retrieve Relevant Documents
     # ----------------------------------------
 
     retrieval_start = time.perf_counter()
 
-    retrieved_documents = retrieve(
-        query=query,
-        vector_store=vector_store,
-    )
+    if bm25 is None:
+
+        retrieved_documents = retrieve(
+            query=query,
+            vector_store=vector_store,
+        )
+
+    else:
+
+        retrieved_documents = retrieve_hybrid(
+            query=query,
+            vector_store=vector_store,
+            bm25=bm25,
+        )
 
     retrieval_ms = (
         time.perf_counter() - retrieval_start

@@ -1,38 +1,31 @@
 from src.pipelines.query_pipeline import answer_question
+from src.retrieval.bm25 import BM25Retriever
 from src.vectorstore.faiss_store import FAISSVectorStore
-from src.retrieval.retriever import retrieve
-from src.generation.prompt_builder import build_prompt
-from src.generation.llm import generate_response
 
-store = FAISSVectorStore.load("data/vectorstore")
-# query = "How many PTO days do new employees receive?"
-# answer = answer_question(
-#     query="How many PTO days do new employees receive?",
-#     vector_store=store,
-# )
+# ----------------------------------------
+# Configuration
+# ----------------------------------------
 
-# print(answer)
-# import time
+USE_HYBRID = True
 
-# start = time.perf_counter()
+# ----------------------------------------
+# Load Retrieval Indexes
+# ----------------------------------------
 
-# documents = retrieve(query, store)
+vector_store = FAISSVectorStore.load(
+    "data/vectorstore"
+)
 
-# print(f"Retrieval: {time.perf_counter() - start:.3f}s")
+bm25 = None
 
-# start = time.perf_counter()
+if USE_HYBRID:
+    bm25 = BM25Retriever.load(
+        "data/bm25"
+    )
 
-# prompt = build_prompt(query, documents)
-
-# print(f"Prompt: {time.perf_counter() - start:.3f}s")
-
-# start = time.perf_counter()
-
-# answer = generate_response(prompt)
-
-# print(f"LLM: {time.perf_counter() - start:.3f}s")
-
-
+# ----------------------------------------
+# Interactive Query Loop
+# ----------------------------------------
 
 while True:
 
@@ -41,9 +34,26 @@ while True:
     if query.lower() == "exit":
         break
 
-    answer = answer_question(
+    result = answer_question(
         query=query,
-        vector_store=store,
+        vector_store=vector_store,
+        bm25=bm25,
     )
 
-    print(answer["answer"])
+    print("\nAnswer\n")
+    print(result["answer"])
+
+    print("\nRetrieved Documents\n")
+
+    for rank, document in enumerate(
+        result["retrieved_documents"],
+        start=1,
+    ):
+        print(
+            f"{rank}. "
+            f"{document.metadata['title']} "
+            f"(Chunk {document.metadata['chunk_id']})"
+        )
+
+    print("\nPerformance\n")
+    print(result["performance"])

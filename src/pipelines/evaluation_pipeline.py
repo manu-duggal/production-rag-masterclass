@@ -1,8 +1,11 @@
 import time
+
 from src.evaluation.evaluator import evaluate_question
-from src.pipelines.query_pipeline import answer_question
-from src.vectorstore.faiss_store import FAISSVectorStore
 from src.evaluation.report_writer import save_report
+from src.pipelines.query_pipeline import answer_question
+from src.retrieval.bm25 import BM25Retriever
+from src.vectorstore.faiss_store import FAISSVectorStore
+
 
 def _compute_summary_metrics(
     results: list[dict],
@@ -149,10 +152,12 @@ def _compute_summary_metrics(
 
     return summary
 
+
 def run_evaluation(
     golden_dataset: list[dict],
     vector_store: FAISSVectorStore,
     experiment_name: str,
+    bm25: BM25Retriever | None = None,
 ) -> dict:
     """
     Evaluate the entire golden dataset.
@@ -172,6 +177,7 @@ def run_evaluation(
         query_result = answer_question(
             query=golden_question["question"],
             vector_store=vector_store,
+            bm25=bm25,
         )
 
         evaluation_result = evaluate_question(
@@ -185,7 +191,8 @@ def run_evaluation(
         # Prevent hitting Groq free-tier rate limits
         # ----------------------------------------
 
-        time.sleep(30)
+        if index != len(golden_dataset):
+            time.sleep(30)
 
     summary_metrics = _compute_summary_metrics(
         results

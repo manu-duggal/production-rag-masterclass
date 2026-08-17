@@ -37,3 +37,4 @@ test_rag.py
 test_ingestion_pipeline.py
 test_evaluation_pipeline.py
 test_query_pipeline.py
+test_bm25.py
