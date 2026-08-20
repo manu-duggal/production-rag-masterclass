@@ -36,7 +36,7 @@ results = run_evaluation(
     golden_dataset=golden_dataset,
     vector_store=vector_store,
     bm25=bm25,
-    experiment_name="hybrid_v1",
+    experiment_name="reranker_v1",
 )
 
 # ----------------------------------------

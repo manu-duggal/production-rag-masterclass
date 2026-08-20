@@ -6,6 +6,7 @@ from src.retrieval.bm25 import BM25Retriever
 from src.retrieval.hybrid import retrieve_hybrid
 from src.retrieval.retriever import retrieve
 from src.vectorstore.faiss_store import FAISSVectorStore
+from src.retrieval.reranker import rerank
 
 
 def answer_question(
@@ -30,6 +31,7 @@ def answer_question(
         retrieved_documents = retrieve(
             query=query,
             vector_store=vector_store,
+            k=20,
         )
 
     else:
@@ -38,7 +40,14 @@ def answer_question(
             query=query,
             vector_store=vector_store,
             bm25=bm25,
+            k=20,
         )
+
+    retrieved_documents = rerank(
+    query=query,
+    documents=retrieved_documents,
+    top_k=5,
+)
 
     retrieval_ms = (
         time.perf_counter() - retrieval_start
